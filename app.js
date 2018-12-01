@@ -5,6 +5,7 @@ var express 			= require('express'),
 	http 			= require('http').Server(app),
 	methodOverride 		= require('method-override'),
 	expressSanitizer 	= require('express-sanitizer');
+const PORT = process.env.PORT || 5000
 
 // App config
 mongoose.connect('mongodb://localhost:27017/codelike_blog', { useNewUrlParser: true });
@@ -105,6 +106,6 @@ app.delete("/blog/:id", function(req, res){
 	// redirect somwhere
 });
 
-http.listen(3000, function(){
+http.listen(PORT, function(){
 	console.log("Server started on *:3000");
 });
